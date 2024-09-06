@@ -1,4 +1,4 @@
-package taller1.ej2;
+package talleres.taller1.ej2;
 
 public class Counter {
     private int counter;
