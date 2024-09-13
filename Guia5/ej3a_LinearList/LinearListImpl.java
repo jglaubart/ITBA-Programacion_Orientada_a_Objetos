@@ -1,22 +1,22 @@
-package guia4.ej12_LinearList;
+package Guia5.ej3a_LinearList;
 
-public class LinearListImpl implements LinearList {
+public class LinearListImpl<T> implements LinearList<T> {
 
     private class Node {
-        private Object head;
+        private T head;
         private Node tail;
 
-        Node(Object head, Node tail) {
+        Node(T head, Node tail) {
             this.head = head;
             this.tail = tail;
         }
         public void setTail(Node tail){
             this.tail = tail;
         }
-        public void setHead(Object head){
+        public void setHead(T head){
             this.head = head;
         }
-        public Object getHead(){
+        public T getHead(){
             return head;
         }
         public Node getTail(){
@@ -29,7 +29,7 @@ public class LinearListImpl implements LinearList {
     private int size = 0;
 
     @Override
-    public void add(Object obj){
+    public void add(T obj){
         Node add = new Node(obj, null);
         if(first == null){
             first = add;
@@ -42,13 +42,13 @@ public class LinearListImpl implements LinearList {
     }
 
     @Override
-    public Object get(int i){
+    public T get(int i){
         Node aux = findNode(i);
         return aux.getHead();
     }
 
     @Override
-    public void set(int i, Object obj){
+    public void set(int i, T obj){
         Node aux = findNode(i);
         aux.setHead(obj);
     }
@@ -85,7 +85,7 @@ public class LinearListImpl implements LinearList {
     }
 
     @Override
-    public int indexOf(Object obj){
+    public int indexOf(T obj){
         Node aux = first;
         for(int i=0; i<size; i++){
             if(obj.equals(aux.getHead())){
