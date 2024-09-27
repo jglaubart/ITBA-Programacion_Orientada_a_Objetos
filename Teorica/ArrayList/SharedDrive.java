@@ -26,7 +26,7 @@ public class SharedDrive {
         throw new NoSuchElementException();
     }
 
-    public File getLasFile(){
+    public File getLastFile(){
         return files.getLast();
     }
 
